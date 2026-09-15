@@ -1,0 +1,83 @@
+{
+  "algorithm_count": 15,
+  "api_calls": 0,
+  "assembly_complete": true,
+  "conditions": {
+    "clean": {
+      "assembly_complete": true,
+      "curves": 2700,
+      "eff_status_runs": 2250,
+      "eff_unavailable_run_count": 0,
+      "equivalence_evidence": 2250,
+      "formal_ready_algorithm_count": 15,
+      "id_ood_eff_minute_rows": 405000,
+      "prediction_evidence": 2250,
+      "raw_results": 2250,
+      "run_final": 2250,
+      "six_axis": 15,
+      "structure_evidence": 2250,
+      "structure_unresolved_task_count": 0,
+      "task_stability": 750,
+      "trajectory_basis_counts": {
+        "algorithm_native_internal_best_so_far.v1": 2250
+      },
+      "trajectory_formal_ready_run_count": 2250,
+      "trajectory_runs": 2250
+    },
+    "noise001": {
+      "assembly_complete": true,
+      "curves": 2700,
+      "eff_status_runs": 2250,
+      "eff_unavailable_run_count": 0,
+      "equivalence_evidence": 2250,
+      "formal_ready_algorithm_count": 15,
+      "id_ood_eff_minute_rows": 405000,
+      "prediction_evidence": 2250,
+      "raw_results": 2250,
+      "run_final": 2250,
+      "six_axis": 15,
+      "structure_evidence": 2250,
+      "structure_unresolved_task_count": 0,
+      "task_stability": 750,
+      "trajectory_basis_counts": {
+        "algorithm_native_internal_best_so_far.v1": 2250
+      },
+      "trajectory_formal_ready_run_count": 2250,
+      "trajectory_runs": 2250
+    },
+    "noise005": {
+      "assembly_complete": true,
+      "curves": 2700,
+      "eff_status_runs": 2250,
+      "eff_unavailable_run_count": 0,
+      "equivalence_evidence": 2250,
+      "formal_ready_algorithm_count": 15,
+      "id_ood_eff_minute_rows": 405000,
+      "prediction_evidence": 2250,
+      "raw_results": 2250,
+      "run_final": 2250,
+      "six_axis": 15,
+      "structure_evidence": 2250,
+      "structure_unresolved_task_count": 0,
+      "task_stability": 750,
+      "trajectory_basis_counts": {
+        "algorithm_native_internal_best_so_far.v1": 2250
+      },
+      "trajectory_formal_ready_run_count": 2250,
+      "trajectory_runs": 2250
+    }
+  },
+  "current_only": true,
+  "dataset_count": 50,
+  "formal_ready": true,
+  "formal_ready_algorithm_condition_count": 45,
+  "limitations": [
+    "三个条件的EFF均由2250条可审计原生轨迹完整计算，无legacy fallback",
+    "本发布只含最终六轴值，不宣称逐分钟 SYM/MIN/STAB 已补齐"
+  ],
+  "llm_calls": 0,
+  "run_count": 6750,
+  "schema_version": "core50_final_release_publication_report_v1",
+  "status": "passed",
+  "training_runs": 0
+}

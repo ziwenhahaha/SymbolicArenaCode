@@ -1,0 +1,56 @@
+dataset:
+  name: nguyen__Nguyen-12
+  description: This is an abstract symbolic regression problem.
+  splits:
+    train:
+      file: train.csv
+      samples: 16
+    valid:
+      file: valid.csv
+      samples: 2
+    id_test:
+      file: id_test.csv
+      samples: 2
+    ood_test:
+      file: ood_test.csv
+      samples: 200
+  ground_truth_formula:
+    file: formula.py
+  features:
+  - name: x1
+    type: continuous
+    description: Independent variables (anonymized)
+    train_range:
+    - 0.03766301311214426
+    - 0.9640600259796086
+    ood_range:
+    - 0.005433557968032465
+    - 1.0992187097588144
+  - name: x2
+    type: continuous
+    description: Independent variables (anonymized)
+    train_range:
+    - 0.005192758436682321
+    - 0.9411986788230424
+    ood_range:
+    - 0.006705539059109977
+    - 1.0991692368824049
+  target:
+    name: target
+    type: continuous
+    description: Dependent variable (target)
+    train_range:
+    - -0.6037326292961982
+    - -0.037749929159407405
+    ood_range:
+    - -0.605246959329099
+    - 0.10396067586044856
+  license: unknown
+  resources:
+  - https://github.com/dso-org/deep-symbolic-optimization
+  - https://raw.githubusercontent.com/dso-org/deep-symbolic-optimization/master/dso/dso/dso/task/regression/benchmarks.csv
+  - 'Benchmark family: nguyen'
+  - 'Equation: pow(x1,4)-pow(x1,3)+div(pow(x2,2),2)-x2'
+  - 'Train specification: {''all'': {''U'': [0, 1, 20]}}'
+  - OOD split was synthesized from the training domain by sampling at least one feature
+    outside the train range and evaluating the ground-truth formula.

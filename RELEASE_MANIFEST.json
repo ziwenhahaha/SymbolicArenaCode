@@ -1,0 +1,39 @@
+{
+  "schema_version": "symbolicarena_anonymous_release.v2",
+  "release_date": "2026-09-15",
+  "source_revision": "603feaab",
+  "previous_anonymous_revision": "f3d554f",
+  "history_mode": "single_anonymous_commit",
+  "contents": {
+    "core_package": "scientific_intelligent_modelling/",
+    "integration_and_analysis_code": "check/",
+    "focused_tests": "tests/",
+    "core50_datasets": "core-50/",
+    "legacy_compact_results": "results/stage1_* through results/stage4_core50_12algs_*",
+    "current_core50_results": "results/stage4_core50_15algs_3seeds_3conditions_3h/",
+    "current_metric_code": "evaluation/core50_final_20260914/code/",
+    "formula_audit_summary": "results/gpt56_opus_simplification_audit_20260915/"
+  },
+  "excluded": [
+    "API credentials and provider response bodies",
+    "local and remote Git metadata",
+    "model weights and checkpoints",
+    "runtime caches, locks, logs, and generated environments",
+    "machine-specific raw experiment directories",
+    "large per-minute trajectory archives"
+  ],
+  "anonymization": {
+    "commit_identity": "Anonymous Authors <anonymous@example.com>",
+    "private_home_paths": "replaced",
+    "internal_hosts": "replaced with anon-node placeholders",
+    "private_ips": "replaced with RFC 5737 documentation addresses",
+    "personal_repository_urls": "removed",
+    "credential_scan_required": true
+  },
+  "validation": {
+    "focused_pytest": "24 passed",
+    "core_imports": "passed",
+    "maximum_tracked_file_size_mib": 50,
+    "release_checksums": "SHA256SUMS"
+  }
+}

@@ -1,0 +1,62 @@
+dataset:
+  name: srsd__srsd-feynman_hard__feynman-i.29.16
+  description: Calculate the Wavelength given Wavelength, Wavelength, Angle, Angle
+  splits:
+    train:
+      file: train.csv
+      samples: 8000
+      ratio: 8
+      nmse: 8.4722071e-33
+    valid:
+      file: valid.csv
+      samples: 1000
+      ratio: 1
+      nmse: 1.2499434e-32
+    id_test:
+      file: id_test.csv
+      samples: 1000
+      ratio: 1
+      nmse: 9.074688e-33
+    ood_test:
+      file: ood_test.csv
+      samples: 1000
+      ratio: 1
+      nmse: 9.8733908e-28
+  ground_truth_formula:
+    file: formula.py
+  features:
+    - name: x0
+      type: continuous
+      train_range: [0.10002787211696033, 9.997538499286653]
+      ood_range: [[0.079457048, 0.10002787], [9.9975385, 12.585825]]
+      description: x_1, Wavelength
+    - name: x1
+      type: continuous
+      train_range: [0.10001065778559816, 9.992803395722609]
+      ood_range: [[0.079444572, 0.10001066], [9.9928034, 12.579674]]
+      description: x_2, Wavelength
+    - name: x2
+      type: continuous
+      train_range: [0.0035727066405966423, 6.281868795718694]
+      ood_range: [[0.0035727066, 0.0035727066], [6.2818688, 6.9096984]]
+      description: theta_1, Angle
+    - name: x3
+      type: continuous
+      train_range: [0.0007556775648832601, 6.282468865061671]
+      ood_range: [[0.00075567756, 0.00075567756], [6.2824689, 6.9106402]]
+      description: theta_2, Angle
+
+  target:
+    name: y
+    type: continuous
+    train_range: [0.011174732782943671, 18.40066647280005]
+    ood_range: 
+    description: x, Wavelength
+
+  license: CC BY 4.0
+  citation:
+    arXiv: 2206.10540
+    title: Rethinking Symbolic Regression Datasets and Benchmarks for Scientific Discovery
+  resources:
+    - https://github.com/omron-sinicx/srsd-benchmark
+    - https://huggingface.co/datasets/yoshitomo-matsubara/srsd-feynman_hard

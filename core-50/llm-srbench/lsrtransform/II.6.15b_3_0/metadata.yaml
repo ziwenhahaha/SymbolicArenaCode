@@ -1,0 +1,64 @@
+dataset:
+  name: llm-srbench__lsrtransform__II.6.15b_3_0
+  description: "Calculate the distance from the dipole to the point where the electric field is being measured given the electric\
+    \ field, the electric constant or permittivity of the medium, the dipole moment and the angle between the dipole axis\
+    \ and the position vector"
+  splits:
+    train:
+      file: train.csv
+      samples: 39348
+      ratio: 3.55
+      nmse: 3.1257267e-13
+    valid:
+      file: valid.csv
+      samples: 5000
+      ratio: 0.45
+      nmse: 3.5346771e-14
+    id_test:
+      file: id_test.csv
+      samples: 11087
+      ratio: 1
+      nmse: 6.6816424e-14
+    ood_test:
+      file: ood_test.csv
+      samples: 11087
+      ratio: 1
+      nmse: 7.8107638e-31
+  ground_truth_formula:
+    file: formula.py
+  features:
+  - name: Ef
+    type: continuous
+    train_range: [-0.1779660433530807, 0.1037777513265609]
+    ood_range: [[-0.192099761251038, -0.1779660433530807], [0.1037777513265609, 0.1180999551358783]]
+    description: the electric field
+  - name: epsilon
+    type: continuous
+    train_range: [1.0000343322753906, 2.999943971633911]
+    ood_range: [[0.9000197146408596, 1.0000343322753906], [2.999943971633911, 3.099988167762132]]
+    description: the electric constant or permittivity of the medium
+  - name: p_d
+    type: continuous
+    train_range: [1.0000535249710083, 2.999955892562866]
+    ood_range: [[0.9000140648511183, 1.0000535249710083], [2.999955892562866, 3.099978106282216]]
+    description: the dipole moment
+  - name: theta
+    type: continuous
+    train_range: [1.0000076293945312, 2.999992847442627]
+    ood_range: [[0.900007196217845, 1.0000076293945312], [2.999992847442627, 3.099990471726084]]
+    description: the angle between the dipole axis and the position vector
+  target:
+    name: r
+    type: continuous
+    train_range: [0.0216582603752613, 20.371814727783203]
+    ood_range:
+    - 0.25141378963
+    - 1.55883398136
+    description: the distance from the dipole to the point where the electric field is being measured
+  license: MIT
+  citation:
+    arXiv: 2504.10415
+    title: 'LLM-SRBench: A New Benchmark for Scientific Equation Discovery with Large Language Models'
+  resources:
+  - https://github.com/deep-symbolic-mathematics/llm-srbench
+  - https://huggingface.co/datasets/nnheui/llm-srbench

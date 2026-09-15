@@ -1,0 +1,93 @@
+dataset:
+  name: korns__Korns-2
+  description: This is an abstract symbolic regression problem.
+  splits:
+    train:
+      file: train.csv
+      samples: 90
+      ratio: 0.9
+      nmse: 0
+    valid:
+      file: valid.csv
+      samples: 10
+      ratio: 0.1
+      nmse: 0
+    id_test:
+      file: id_test.csv
+      samples: 100
+      ratio: 1
+      nmse: 0
+    ood_test:
+      file: ood_test.csv
+      samples: 1000
+      ratio: 10
+      nmse: 0
+  ground_truth_formula:
+    file: formula.py
+  features:
+  - name: x1
+    type: continuous
+    description: Independent variables (anonymized)
+    train_range:
+    - -48.23936775129983
+    - 48.6369929794342
+    ood_range:
+    - -54.94754200595217
+    - 54.99851106530221
+  - name: x2
+    type: continuous
+    description: Independent variables (anonymized)
+    train_range:
+    - -49.769117553107314
+    - 49.9084695967628
+    ood_range:
+    - -54.89778911375669
+    - 54.84783963177386
+  - name: x3
+    type: continuous
+    description: Independent variables (anonymized)
+    train_range:
+    - -49.757480894945296
+    - 49.93071268467277
+    ood_range:
+    - -54.943923542205596
+    - 54.88830147092933
+  - name: x4
+    type: continuous
+    description: Independent variables (anonymized)
+    train_range:
+    - -48.48303267661341
+    - 49.896401069155445
+    ood_range:
+    - -54.916383431390976
+    - 54.90092164571936
+  - name: x5
+    type: continuous
+    description: Independent variables (anonymized)
+    train_range:
+    - -49.095672948644484
+    - 49.729786052449015
+    ood_range:
+    - -54.90733535473143
+    - 54.96542100014105
+  target:
+    name: target
+    type: continuous
+    description: Dependent variable (target)
+    train_range:
+    - -551.6376816493726
+    - 73.18548297802087
+    ood_range:
+    - -1091.1022701030856
+    - 1395.5773599222066
+  license: unknown
+  resources:
+  - https://github.com/dso-org/deep-symbolic-optimization
+  - https://raw.githubusercontent.com/dso-org/deep-symbolic-optimization/master/dso/dso/dso/task/regression/benchmarks.csv
+  - 'Benchmark family: korns'
+  - 'Equation: 0.23+14.2*div((x4+x2),(3*x5))'
+  - 'Train specification: {''all'': {''U'': [-50, 50, 100]}}'
+  - 'Test specification: {''all'': {''U'': [-50, 50, 100]}}'
+  - The external benchmark test specification is same-domain and was mapped to id_test.
+  - OOD split was synthesized from the training domain by sampling at least one feature
+    outside the train range and evaluating the ground-truth formula.

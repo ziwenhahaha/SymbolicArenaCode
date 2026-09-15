@@ -1,0 +1,84 @@
+dataset:
+  name: vladislavleva__Vladislavleva-4
+  description: This is an abstract symbolic regression problem.
+  splits:
+    train:
+      file: train.csv
+      samples: 820
+    valid:
+      file: valid.csv
+      samples: 102
+    id_test:
+      file: id_test.csv
+      samples: 102
+    ood_test:
+      file: ood_test.csv
+      samples: 5000
+  ground_truth_formula:
+    file: formula.py
+  features:
+  - name: x1
+    type: continuous
+    description: Independent variables (anonymized)
+    train_range:
+    - 0.061226023616471184
+    - 6.036947716148247
+    ood_range:
+    - -0.24802488561067637
+    - 6.3468817290176975
+  - name: x2
+    type: continuous
+    description: Independent variables (anonymized)
+    train_range:
+    - 0.054885701919352006
+    - 6.048721751537564
+    ood_range:
+    - -0.24752711785106576
+    - 6.349407275539026
+  - name: x3
+    type: continuous
+    description: Independent variables (anonymized)
+    train_range:
+    - 0.05392874208235705
+    - 6.039400329524137
+    ood_range:
+    - -0.2495459452296402
+    - 6.349527016923312
+  - name: x4
+    type: continuous
+    description: Independent variables (anonymized)
+    train_range:
+    - 0.060589931931101584
+    - 6.045923448067235
+    ood_range:
+    - -0.24899471191237393
+    - 6.346181496252861
+  - name: x5
+    type: continuous
+    description: Independent variables (anonymized)
+    train_range:
+    - 0.06605578950730147
+    - 6.039126770668179
+    ood_range:
+    - -0.2466243243262229
+    - 6.349920187157659
+  target:
+    name: target
+    type: continuous
+    description: Dependent variable (target)
+    train_range:
+    - 0.25308640269853644
+    - 1.4605266284901048
+    ood_range:
+    - 0.19189087213204187
+    - 1.8518012719628432
+  license: unknown
+  resources:
+  - https://github.com/dso-org/deep-symbolic-optimization
+  - https://raw.githubusercontent.com/dso-org/deep-symbolic-optimization/master/dso/dso/dso/task/regression/benchmarks.csv
+  - 'Benchmark family: vladislavleva'
+  - 'Equation: div(10,(5+(pow((x1-3),2)+pow((x2-3),2)+pow((x3-3),2)+pow((x4-3),2)+pow((x5-3),2))))'
+  - 'Train specification: {''all'': {''U'': [0.05, 6.05, 1024]}}'
+  - 'Test specification: {''all'': {''U'': [-0.25, 6.35, 5000]}}'
+  - The external benchmark test specification extends beyond the training domain and
+    was mapped to ood_test.

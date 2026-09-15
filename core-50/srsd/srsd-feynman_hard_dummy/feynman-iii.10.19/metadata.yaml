@@ -1,0 +1,72 @@
+dataset:
+  name: srsd__srsd-feynman_hard_dummy__feynman-iii.10.19
+  description: Calculate the Energy given Magnetic moment, Element of magnetic field, Element of magnetic field, Element of magnetic field
+  splits:
+    train:
+      file: train.csv
+      samples: 8000
+      ratio: 8
+      nmse: 0
+    valid:
+      file: valid.csv
+      samples: 1000
+      ratio: 1
+      nmse: 0
+    id_test:
+      file: id_test.csv
+      samples: 1000
+      ratio: 1
+      nmse: 0
+    ood_test:
+      file: ood_test.csv
+      samples: 1000
+      ratio: 1
+      nmse: 0
+  ground_truth_formula:
+    file: formula.py
+  features:
+    - name: x0
+      type: continuous
+      train_range: [-9.997556981496819e-14, 9.99695795979652e-14]
+      ood_range: [[-1.0997283e-13, -9.997557e-14], [9.996958e-14, 1.0996684e-13]]
+      description: meaningless
+    - name: x1
+      type: continuous
+      train_range: [1.000005269702342e-07, 9.998091627494432e-06]
+      ood_range: [[7.9434021e-08, 1.0000053e-07], [9.9980916e-06, 1.2586728e-05]]
+      description: meaningless
+    - name: x2
+      type: continuous
+      train_range: [-9.977470130746477e-24, 9.998358378655823e-24]
+      ood_range: [[-1.0976262e-23, -9.9774701e-24], [9.9983584e-24, 1.099715e-23]]
+      description: mu, Magnetic moment
+    - name: x3
+      type: continuous
+      train_range: [-0.09974289685487747, 0.09997498989105225]
+      ood_range: [[-0.10972879, -0.099742897], [0.09997499, 0.10996088]]
+      description: B_x, Element of magnetic field
+    - name: x4
+      type: continuous
+      train_range: [-0.09993700683116911, 0.09999515116214752]
+      ood_range: [[-0.10993361, -0.099937007], [0.099995151, 0.10999176]]
+      description: B_y, Element of magnetic field
+    - name: x5
+      type: continuous
+      train_range: [-0.09993240237236024, 0.09989400207996368]
+      ood_range: [[-0.10992372, -0.099932402], [0.099894002, 0.10988532]]
+      description: B_z, Element of magnetic field
+
+  target:
+    name: y
+    type: continuous
+    train_range: [-1.0904727018242423e-24, 1.0632812580669531e-24]
+    ood_range: 
+    description: E, Energy
+
+  license: CC BY 4.0
+  citation:
+    arXiv: 2206.10540
+    title: Rethinking Symbolic Regression Datasets and Benchmarks for Scientific Discovery
+  resources:
+    - https://github.com/omron-sinicx/srsd-benchmark
+    - https://huggingface.co/datasets/yoshitomo-matsubara/srsd-feynman_hard_dummy

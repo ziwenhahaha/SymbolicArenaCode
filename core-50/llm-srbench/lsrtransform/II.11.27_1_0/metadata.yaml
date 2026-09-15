@@ -1,0 +1,60 @@
+dataset:
+  name: llm-srbench__lsrtransform__II.11.27_1_0
+  description: "Calculate the polarizability of a unit given the polarization of a material, the number density of polarizable units, the permittivity of free space or a constant and the external electric field"
+  splits:
+    train:
+      file: train.csv
+      samples: 75000
+      ratio: 3.75
+      nmse: 1.326892e-15
+    valid:
+      file: valid.csv
+      samples: 5000
+      ratio: 0.25
+      nmse: 8.04821e-15
+    id_test:
+      file: id_test.csv
+      samples: 20000
+      ratio: 1
+      nmse: 6.1465379e-16
+    ood_test:
+      file: ood_test.csv
+      samples: 20000
+      ratio: 1
+      nmse: 9.9905238e-28
+  ground_truth_formula:
+    file: formula.py
+  features:
+    - name: Pol
+      type: continuous
+      train_range: [0.0001726542541291, 5.04319429397583]
+      ood_range: [[-0.2518179462670791, 0.0001726542541291],[5.04319429397583, 5.291906834082565]]
+      description: the polarization of a material
+    - name: n
+      type: continuous
+      train_range: [1.713729761831928e-05, 0.9999913573265076]
+      ood_range: [[-0.0499779018934392, 1.713729761831928e-05],[0.9999913573265076, 1.0499832395592443]]
+      description: the number density of polarizable units
+    - name: epsilon
+      type: continuous
+      train_range: [1.000012993812561, 1.9999779462814329]
+      ood_range: [[0.950006265260634, 1.000012993812561],[1.9999779462814329, 2.049991108533085]]
+      description: the permittivity of free space or a constant
+    - name: Ef
+      type: continuous
+      train_range: [1.0000038146972656, 1.999996542930603]
+      ood_range: [[0.9500024497311051, 1.0000038146972656],[1.999996542930603, 2.049996422671702]]
+      description: the external electric field
+  target:
+    name: alpha
+    type: continuous
+    train_range: [5.730105840484612e-05, 41743.69140625]
+    ood_range: null
+    description: the polarizability of a unit
+  license: MIT
+  citation:
+    arXiv: 2504.10415
+    title: 'LLM-SRBench: A New Benchmark for Scientific Equation Discovery with Large Language Models'
+  resources:
+    - https://github.com/deep-symbolic-mathematics/llm-srbench
+    - https://huggingface.co/datasets/nnheui/llm-srbench

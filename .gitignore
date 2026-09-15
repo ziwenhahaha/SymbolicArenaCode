@@ -1,0 +1,84 @@
+build/
+scientific_intelligent_modelling.egg-info/
+sim_toolkit.egg-info/
+__pycache__/
+*.pyc
+.git
+outputs/
+key.txt
+model.pt
+*.pt
+dist/
+.env/*.env
+.env
+experiments/
+wandb
+.sim_datasets/
+sim-datasets-data/
+tmp/
+artifacts/
+exp-planning/02.E1选择验证/llm_configs/benchmark_llm.config
+exp-planning/02.E1选择验证/llm_configs/benchmark_llm_*.config
+
+# Local E1 archives and remote rerun logs.
+# Final compact CSV/report directories are tracked separately when needed.
+exp-planning/02.E1选择验证/e1_final_results_20260424-041046*/
+exp-planning/02.E1选择验证/e1_final_results_20260424-041046*.tar.gz
+exp-planning/02.E1选择验证/e1_final_results_current_*.tar.gz
+exp-planning/02.E1选择验证/remote_reruns/
+experiment-results/benchmark_formal200_20260417/*_assets_*.tar.gz
+experiment-results/*_local_*_smoke_*/
+exp-planning/02.E1选择验证/generated/probe4_full664_v1/orchestrator_logs/
+exp-planning/02.E1选择验证/generated/probe4_full664_v1/load_queue/
+
+# Local generated queue states, dry-runs, and audit snapshots.
+exp-planning/02.E1选择验证/generated/candidate200_12alg_load_queue/
+exp-planning/02.E1选择验证/generated/probe4_full664_v1/current_digest_*/
+exp-planning/02.E1选择验证/generated/probe4_full664_v1/current_digest_latest.txt
+exp-planning/02.E1选择验证/generated/probe4_full664_v1/current_digest_work/
+exp-planning/02.E1选择验证/generated/probe4_full664_v1/final_digest_*/
+exp-planning/02.E1选择验证/generated/probe4_full664_v1/progress_audit_*/
+exp-planning/02.E1选择验证/iteration_analysis_*/
+exp-planning/05.Core50噪声鲁棒性评测/generated/load_queue/**
+!exp-planning/05.Core50噪声鲁棒性评测/generated/load_queue/
+!exp-planning/05.Core50噪声鲁棒性评测/generated/load_queue/.gitkeep
+exp-planning/05.Core50噪声鲁棒性评测/results/remote_artifacts*/
+
+# Local assistant scratch entrypoint.
+CLAUDE.md
+
+# Local archive/result snapshots that should not enter Git.
+眼不见为净/
+frozen-results/
+benchmark-runs/
+A_Neurips_experiments/
+AAAI_experiments/
+
+# Superpowers isolated worktrees.
+.worktrees/
+
+# Local anonymous submission repository.
+/SymbolicArenaCode/
+
+# Anonymous release build scratch and machine-local configuration.
+.anonymous-build-staging/
+.claude/
+.codex/
+.vscode/
+*.key
+*.pem
+*.sqlite3
+*.lock
+.eggs/
+*.out
+*.log
+*.pkl
+
+# Legacy inventories were bound to machine-local paths before anonymization.
+results/**/CHECKSUMS.sha256
+results/**/checksums.sha256
+results/**/FILE_INVENTORY.tsv
+results/**/file_inventory.tsv
+
+# Local sensitivity analysis scratch directory.
+/敏感性分析/

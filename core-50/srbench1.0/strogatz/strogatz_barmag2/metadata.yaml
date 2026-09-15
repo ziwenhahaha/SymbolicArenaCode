@@ -1,0 +1,52 @@
+dataset:
+  name: srbench1.0__strogatz__strogatz_barmag2
+  description: This formula is about Coupled dynamics of the second magnetic dipole.
+    Calculate the Angular velocity of the second magnet (dphi/dt) given Angle of the
+    first magnet and Angle of the second magnet
+  splits:
+    train:
+      file: train.csv
+      samples: 256
+      ratio: 8
+      nmse: 2.602101968465213e-29
+    valid:
+      file: valid.csv
+      samples: 32
+      ratio: 1
+      nmse: 9.776467595099666e-30
+    id_test:
+      file: id_test.csv
+      samples: 32
+      ratio: 1
+      nmse: 3.815810079391503e-29
+    ood_test:
+      file: ood_test.csv
+      samples: 1000
+      ratio: 31.25
+      nmse: 0.0
+  ground_truth_formula:
+    file: formula.py
+  features:
+  - name: x
+    type: continuous
+    train_range: [4.1184890487447, 5.984944910392599]
+    ood_range: [[4.02664322764767, 4.1184890487447], [5.984944910392599, 6.08304564847815]]
+    description: Angle of the first magnet
+  - name: y
+    type: continuous
+    train_range: [0.200011672644315, 6.6497768432110895]
+    ood_range: [[-0.1218638714222868, 0.200011672644315], [6.6497768432110895, 6.971863407063088]]
+    description: Angle of the second magnet
+  target:
+    name: target
+    type: continuous
+    train_range: [-1.02941029513599, 1.2435403201791295]
+    ood_range: [-0.5281595326435833, 0.5599968758165468]
+    description: Angular velocity of the second magnet (dphi/dt)
+  license: GPL-3.0
+  citation:
+    arXiv: 2107.14351
+    title: Contemporary Symbolic Regression Methods and their Relative Performance
+  resources:
+  - https://github.com/cavalab/srbench
+  - https://cavalab.org/srbench/datasets/

@@ -1,0 +1,54 @@
+dataset:
+  name: srsd__srsd-feynman_medium__feynman-i.43.31
+  description: Calculate the Diffusion coefficient given Viscosity, Boltzmann constant
+  splits:
+    train:
+      file: train.csv
+      samples: 8000
+      ratio: 8
+      nmse: 0
+    valid:
+      file: valid.csv
+      samples: 1000
+      ratio: 1
+      nmse: 0
+    id_test:
+      file: id_test.csv
+      samples: 1000
+      ratio: 1
+      nmse: 0
+    ood_test:
+      file: ood_test.csv
+      samples: 1000
+      ratio: 1
+      nmse: 8.7833239e-28
+  ground_truth_formula:
+    file: formula.py
+  features:
+  - name: x0
+    type: continuous
+    train_range: [10005186469232.256, 999652935695625.6]
+    ood_range: [[7.9477461e+12, 1.0005186e+13], [9.9965294e+14, 1.258434e+15]]
+    description: mu, Viscosity
+  - name: x1
+    type: continuous
+    train_range: [10.006511968506004, 999.5443676433698]
+    ood_range: [[7.9488948, 10.006512], [999.54437, 1258.2822]]
+    description: k, Boltzmann constant
+
+  target:
+    name: y
+    type: continuous
+    train_range: [1.411865712770911e-09, 1.3225626976220127e-05]
+    ood_range:
+    - 1.24804584676e-07
+    - 2.18294177816e-05
+    description: D, Diffusion coefficient
+
+  license: CC BY 4.0
+  citation:
+    arXiv: 2206.10540
+    title: Rethinking Symbolic Regression Datasets and Benchmarks for Scientific Discovery
+  resources:
+  - https://github.com/omron-sinicx/srsd-benchmark
+  - https://huggingface.co/datasets/yoshitomo-matsubara/srsd-feynman_medium_dummy

@@ -1,0 +1,50 @@
+dataset:
+  name: llm-srbench__matsci__MatSci21
+  description: "Calculate Stress given Strain and Temperature"
+  splits:
+    train:
+      file: train.csv
+      samples: 3500
+      ratio: 7
+      nmse: 2.9934865e-14
+    valid:
+      file: valid.csv
+      samples: 500
+      ratio: 1
+      nmse: 2.830852e-14
+    id_test:
+      file: id_test.csv
+      samples: 500
+      ratio: 1
+      nmse: 3.2430011e-14
+    ood_test:
+      file: ood_test.csv
+      samples: 500
+      ratio: 1
+      nmse: 8.267876e-13
+  ground_truth_formula:
+    file: formula.py
+  features:
+    - name: epsilon
+      type: continuous
+      train_range: [0.0, 0.5399879813194274]
+      ood_range: [0.5401080250740051, 0.6000000238418579]
+      description: Strain
+    - name: T
+      type: continuous
+      train_range: [273.0, 542.9940185546875]
+      ood_range: [543.0540161132812, 573.0]
+      description: Temperature
+  target:
+    name: sigma
+    type: continuous
+    train_range: [-23.62991714477539, 109.63748931884766]
+    ood_range: [109.78182983398438, 196.1579132080078]
+    description: Stress
+  license: MIT
+  citation:
+    arXiv: 2504.10415
+    title: 'LLM-SRBench: A New Benchmark for Scientific Equation Discovery with Large Language Models'
+  resources:
+    - https://github.com/deep-symbolic-mathematics/llm-srbench
+    - https://huggingface.co/datasets/nnheui/llm-srbench

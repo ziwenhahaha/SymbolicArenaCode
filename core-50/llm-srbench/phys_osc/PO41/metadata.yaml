@@ -1,0 +1,55 @@
+dataset:
+  name: llm-srbench__phys_osc__PO41
+  description: "Calculate Acceleration in Non-linear Harmonic Oscillator given Position at time t, Time and Velocity at time t"
+  splits:
+    train:
+      file: train.csv
+      samples: 3500
+      ratio: 7
+      nmse: inf
+    valid:
+      file: valid.csv
+      samples: 500
+      ratio: 1
+      nmse: inf
+    id_test:
+      file: id_test.csv
+      samples: 500
+      ratio: 1
+      nmse: inf
+    ood_test:
+      file: ood_test.csv
+      samples: 500
+      ratio: 1
+      nmse: inf
+  ground_truth_formula:
+    file: formula.py
+  features:
+    - name: x
+      type: continuous
+      train_range: [-0.3869872987270355, 1.0]
+      ood_range: [-3.6684563383460045e-05, 9.218420746037737e-05]
+      description: Position at time t
+    - name: t
+      type: continuous
+      train_range: [0.0, 35.9911994934082]
+      ood_range: [36.0072021484375, 40.0]
+      description: Time
+    - name: v
+      type: continuous
+      train_range: [-0.5824286341667175, 0.2620094120502471]
+      ood_range: [-7.252521754708141e-05, 0.0001499041827628]
+      description: Velocity at time t
+  target:
+    name: dv_dt
+    type: continuous
+    train_range: [-0.4295727014541626, 0.3736505508422851]
+    ood_range: [-0.0001207307504955, 5.6902397773228586e-05]
+    description: Acceleration in Non-linear Harmonic Oscillator
+  license: MIT
+  citation:
+    arXiv: 2504.10415
+    title: 'LLM-SRBench: A New Benchmark for Scientific Equation Discovery with Large Language Models'
+  resources:
+    - https://github.com/deep-symbolic-mathematics/llm-srbench
+    - https://huggingface.co/datasets/nnheui/llm-srbench

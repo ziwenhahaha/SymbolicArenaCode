@@ -1,0 +1,67 @@
+dataset:
+  name: srsd__srsd-feynman_hard_dummy__feynman-i.15.3t
+  description: Calculate the Time given Time, Velocity, Position
+  splits:
+    train:
+      file: train.csv
+      samples: 8000
+      ratio: 8
+      nmse: 2.2335887e-15
+    valid:
+      file: valid.csv
+      samples: 1000
+      ratio: 1
+      nmse: 2.1793446e-15
+    id_test:
+      file: id_test.csv
+      samples: 1000
+      ratio: 1
+      nmse: 2.2678883e-15
+    ood_test:
+      file: ood_test.csv
+      samples: 1000
+      ratio: 1
+      nmse: 7.5785024e-28
+  ground_truth_formula:
+    file: formula.py
+  features:
+    - name: x0
+      type: continuous
+      train_range: [1000756544.0, 99948232704.0]
+      ood_range: [[7.9497982e+08, 1.0007565e+09], [9.9948233e+10, 1.2581935e+11]]
+      description: meaningless
+    - name: x1
+      type: continuous
+      train_range: [1.0014503004640572e-06, 9.999744361266492e-05]
+      ood_range: [[7.9553891e-07, 1.0014503e-06], [9.9997444e-05, 0.00012588004]]
+      description: t, Time
+    - name: x2
+      type: continuous
+      train_range: [-9.985910304941853e-17, 9.994223800970256e-17]
+      ood_range: [[-1.0984917e-16, -9.9859103e-17], [9.9942238e-17, 1.0993231e-16]]
+      description: meaningless
+    - name: x3
+      type: continuous
+      train_range: [-9998954.0, 9993828.0]
+      ood_range: [[-10998593, -9998954], [9993828, 10993467]]
+      description: u, Velocity
+    - name: x4
+      type: continuous
+      train_range: [-99.97933197021484, 99.81721496582033]
+      ood_range: [[-109.96916, -99.979332], [99.817215, 109.80704]]
+      description: x, Position
+
+  target:
+    name: y
+    type: continuous
+    train_range: [1.001436544356693e-06, 9.999730536947027e-05]
+    ood_range: 
+    description: t_1, Time
+
+  license: CC BY 4.0
+  citation:
+    arXiv: 2206.10540
+    title: Rethinking Symbolic Regression Datasets and Benchmarks for Scientific Discovery
+  resources:
+    - https://github.com/omron-sinicx/srsd-benchmark
+    - https://huggingface.co/datasets/yoshitomo-matsubara/srsd-feynman_hard_dummy

@@ -1,0 +1,52 @@
+dataset:
+  name: srsd__srsd-feynman_easy__feynman-ii.4.23
+  description: Calculate the Electric potential given Electric charge, Vacuum permittivity
+  splits:
+    train:
+      file: train.csv
+      samples: 8000
+      ratio: 8
+      nmse: 1.5542348e-32
+    valid:
+      file: valid.csv
+      samples: 1000
+      ratio: 1
+      nmse: 1.1990334e-32
+    id_test:
+      file: id_test.csv
+      samples: 1000
+      ratio: 1
+      nmse: 1.3337597e-32
+    ood_test:
+      file: ood_test.csv
+      samples: 1000
+      ratio: 1
+      nmse: 1.5458338e-29
+  ground_truth_formula:
+    file: formula.py
+  features:
+    - name: x0
+      type: continuous
+      train_range: [-0.09991619011405635, 0.09999732789172457]
+      ood_range: [[-0.10991187, -0.09991619], [0.099997328, 0.109993]]
+      description: q, Electric charge
+    - name: x1
+      type: continuous
+      train_range: [0.010008686873833895, 0.9992126979760207]
+      ood_range: [[0.0079508408, 0.010008687], [0.9992127, 1.2578301]]
+      description: epsilon, Vacuum permittivity
+
+  target:
+    name: y
+    type: continuous
+    train_range: [-81902761094.65091, 85807215708.57991]
+    ood_range: 
+    description: phi, Electric potential
+
+  license: CC BY 4.0
+  citation:
+    arXiv: 2206.10540
+    title: Rethinking Symbolic Regression Datasets and Benchmarks for Scientific Discovery
+  resources:
+    - https://github.com/omron-sinicx/srsd-benchmark
+    - https://huggingface.co/datasets/yoshitomo-matsubara/srsd-feynman_easy

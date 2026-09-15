@@ -1,0 +1,60 @@
+dataset:
+  name: srbench2025__firstprinciples__first_principles_leavitt
+  description: 'The Leavitt dataset models the relationship between the luminosity of a star and its period. The dataset is
+    based on the Leavitt Law.
+
+
+    The data was taken from 1912 paper by Leavitt. y-axis is magnitude at maxima and minima. x-axis is logarithm of period
+    in days.'
+  splits:
+    train:
+      file: train.csv
+      samples: 19
+      ratio: 9.5
+      nmse: 0.0610041439695
+    valid:
+      file: valid.csv
+      samples: 2
+      ratio: 1
+      nmse: 12.2737690963
+    id_test:
+      file: id_test.csv
+      samples: 2
+      ratio: 1
+      nmse: 0.0668095535711
+    ood_test:
+      file: ood_test.csv
+      samples: 3
+      ratio: 1.5
+      nmse: 0.0634502738367
+  ground_truth_formula:
+    file: formula.py
+  features:
+  - name: logP
+    type: continuous
+    description: Logarithm of period in days
+    train_range:
+    - 0.2479616306954436
+    - 1.820143884892086
+    ood_range:
+    - 0.105515587529976
+    - 2.1050359712230216
+  target:
+    name: target
+    type: continuous
+    description: Magnitude
+    train_range:
+    - 11.409903387194396
+    - 14.800560829291838
+    ood_range:
+    - 11.219865002566635
+    - 14.800009193922817
+  license: unknown
+  resources:
+  - https://github.com/cavalab/srbench/tree/srbench_2025
+  - https://arxiv.org/abs/2505.03977
+  - srbench2025/firstprinciples/first_principles_leavitt/first_principles_leavitt.tsv.gz
+  - publication repository https://github.com/MilesCranmer/PySR
+  - Interpretable machine learning for science with PySR and SymbolicRegression, CRANMER, Miles, arXiv preprint arXiv:2305.01582,
+    2023.
+  - OOD split extracted from the original table by iterative axis-wise interval shrink (step_percent=0.0001, target_ratio=0.1).

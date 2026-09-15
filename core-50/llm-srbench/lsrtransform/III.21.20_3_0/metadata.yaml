@@ -1,0 +1,63 @@
+dataset:
+  name: llm-srbench__lsrtransform__III.21.20_3_0
+  description: "Calculate the mass of a charge carrier given the current density, the charge carrier density, the elementary\
+    \ charge and the vector potential"
+  splits:
+    train:
+      file: train.csv
+      samples: 75000
+      ratio: 3.75
+      nmse: 4.3994002e-15
+    valid:
+      file: valid.csv
+      samples: 5000
+      ratio: 0.25
+      nmse: 3.2236149e-15
+    id_test:
+      file: id_test.csv
+      samples: 20000
+      ratio: 1
+      nmse: 3.9777691e-15
+    ood_test:
+      file: ood_test.csv
+      samples: 20000
+      ratio: 1
+      nmse: 1.3331258e-25
+  ground_truth_formula:
+    file: formula.py
+  features:
+  - name: j
+    type: continuous
+    train_range: [-87.5830078125, -0.435838371515274]
+    ood_range: [[-91.95805196922564, -87.5830078125], [-0.435838371515274, 3.922131159470932]]
+    description: the current density
+  - name: rho_c_0
+    type: continuous
+    train_range: [1.0000685453414917, 4.999965667724609]
+    ood_range: [[0.8000273610025845, 1.0000685453414917], [4.999965667724609, 5.1999961743792245]]
+    description: the charge carrier density
+  - name: q
+    type: continuous
+    train_range: [1.0000522136688232, 4.999911785125732]
+    ood_range: [[0.8000258140768133, 1.0000522136688232], [4.999911785125732, 5.199940384961551]]
+    description: the elementary charge
+  - name: A_vec
+    type: continuous
+    train_range: [1.0000152587890625, 4.999986171722412]
+    ood_range: [[0.8000092755868757, 1.0000152587890625], [4.999986171722412, 5.199926825494688]]
+    description: the vector potential
+  target:
+    name: m
+    type: continuous
+    train_range: [0.0157190673053264, 166.39370727539062]
+    ood_range:
+    - -307049.473049
+    - 635706.311431
+    description: the mass of a charge carrier
+  license: MIT
+  citation:
+    arXiv: 2504.10415
+    title: 'LLM-SRBench: A New Benchmark for Scientific Equation Discovery with Large Language Models'
+  resources:
+  - https://github.com/deep-symbolic-mathematics/llm-srbench
+  - https://huggingface.co/datasets/nnheui/llm-srbench

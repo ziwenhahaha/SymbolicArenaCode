@@ -1,0 +1,6 @@
+tool,params,host,conda_env,workers,tasks,slice_csv,remote_job,tmux_session
+e2esr,e2esr,anon-node-03,sim_e2esr,50,200,slices/e2esr/anon-node-03.csv,remote_jobs/e2esr_anon-node-03.sh,e1_remaining5_e2esr_24
+iMCTS,imcts,anon-node-04,sim_iMCTS,50,200,slices/imcts/anon-node-04.csv,remote_jobs/imcts_anon-node-04.sh,e1_remaining5_imcts_25
+QLattice,qlattice,anon-node-05,sim_qLattice,50,200,slices/qlattice/anon-node-05.csv,remote_jobs/qlattice_anon-node-05.sh,e1_remaining5_qlattice_26
+ragsr,ragsr,anon-node-06,sim_ragsr,50,200,slices/ragsr/anon-node-06.csv,remote_jobs/ragsr_anon-node-06.sh,e1_remaining5_ragsr_27
+udsr,udsr,anon-node-07,sim_dso,50,200,slices/udsr/anon-node-07.csv,remote_jobs/udsr_anon-node-07.sh,e1_remaining5_udsr_28

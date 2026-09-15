@@ -1,0 +1,74 @@
+dataset:
+  name: srsd__srsd-feynman_easy_dummy__feynman-i.18.16
+  description: Calculate the Angular momentum given Mass, Distance, Velocity, Angle
+  splits:
+    train:
+      file: train.csv
+      samples: 8000
+      ratio: 8
+      nmse: 9.8732948e-15
+    valid:
+      file: valid.csv
+      samples: 1000
+      ratio: 1
+      nmse: 4.7705273e-15
+    id_test:
+      file: id_test.csv
+      samples: 1000
+      ratio: 1
+      nmse: 5.57719e-15
+    ood_test:
+      file: ood_test.csv
+      samples: 1000
+      ratio: 1
+      nmse: 3.0013977e-28
+  ground_truth_formula:
+    file: formula.py
+  features:
+  - name: x0
+    type: continuous
+    train_range: [0.1000886932015419, 9.998065948486328]
+    ood_range: [[0.079507568, 0.10008869], [9.9980659, 12.58614]]
+    description: m, Mass
+  - name: x1
+    type: continuous
+    train_range: [0.10010436177253725, 9.998382568359377]
+    ood_range: [[0.079520511, 0.10010436], [9.9983826, 12.58646]]
+    description: r, Distance
+  - name: x2
+    type: continuous
+    train_range: [-9.99195724998175e+22, 9.98892812887238e+22]
+    ood_range: [[-1.0991002e+23, -9.9919572e+22], [9.9889281e+22, 1.0987972e+23]]
+    description: meaningless
+  - name: x3
+    type: continuous
+    train_range: [0.10001473128795624, 9.991501808166506]
+    ood_range: [[0.079448487, 0.10001473], [9.9915018, 12.577928]]
+    description: v, Velocity
+  - name: x4
+    type: continuous
+    train_range: [0.001050020451657474, 6.282364845275879]
+    ood_range: [[0.0010500205, 0.0010500205], [6.2823648, 6.9104963]]
+    description: theta, Angle
+  - name: x5
+    type: continuous
+    train_range: [-9.991351065471906e+22, 9.996751782145048e+22]
+    ood_range: [[-1.0990756e+23, -9.9913511e+22], [9.9967518e+22, 1.0996157e+23]]
+    description: meaningless
+
+  target:
+    name: y
+    type: continuous
+    train_range: [-585.3826904296875, 460.2879333496094]
+    ood_range:
+    - -556.570428539
+    - 524.776451025
+    description: L, Angular momentum
+
+  license: CC BY 4.0
+  citation:
+    arXiv: 2206.10540
+    title: Rethinking Symbolic Regression Datasets and Benchmarks for Scientific Discovery
+  resources:
+  - https://github.com/omron-sinicx/srsd-benchmark
+  - https://huggingface.co/datasets/yoshitomo-matsubara/srsd-feynman_easy_dummy

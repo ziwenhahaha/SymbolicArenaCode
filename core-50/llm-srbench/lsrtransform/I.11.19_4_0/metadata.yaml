@@ -1,0 +1,73 @@
+dataset:
+  name: llm-srbench__lsrtransform__I.11.19_4_0
+  description: "Calculate the second variable or value given the resulting sum of products, the first coefficient, the second\
+    \ coefficient, the third coefficient, the first variable or value and the third variable or value"
+  splits:
+    train:
+      file: train.csv
+      samples: 75000
+      ratio: 3.75
+      nmse: 6.2247169e-15
+    valid:
+      file: valid.csv
+      samples: 5000
+      ratio: 0.25
+      nmse: 5.9989216e-15
+    id_test:
+      file: id_test.csv
+      samples: 20000
+      ratio: 1
+      nmse: 6.0672709e-15
+    ood_test:
+      file: ood_test.csv
+      samples: 20000
+      ratio: 1
+      nmse: 1.6869274e-32
+  ground_truth_formula:
+    file: formula.py
+  features:
+  - name: A
+    type: continuous
+    train_range: [8.400001525878906, 58.022403717041016]
+    ood_range: [[5.920413058173798, 8.400001525878906], [58.022403717041016, 60.47973709909394]]
+    description: the resulting sum of products
+  - name: x1
+    type: continuous
+    train_range: [1.0000685453414917, 4.999965667724609]
+    ood_range: [[0.8000141759985485, 1.0000685453414917], [4.999965667724609, 5.199991224015245]]
+    description: the first coefficient
+  - name: x2
+    type: continuous
+    train_range: [1.0000522136688232, 4.999911785125732]
+    ood_range: [[0.800009985691373, 1.0000522136688232], [4.999911785125732, 5.199995856915659]]
+    description: the second coefficient
+  - name: x3
+    type: continuous
+    train_range: [1.0000152587890625, 4.999986171722412]
+    ood_range: [[0.8000136901735466, 1.0000152587890625], [4.999986171722412, 5.199993806555444]]
+    description: the third coefficient
+  - name: y1
+    type: continuous
+    train_range: [1.0000371932983398, 4.999997138977051]
+    ood_range: [[0.8000094514541306, 1.0000371932983398], [4.999997138977051, 5.199984287225665]]
+    description: the first variable or value
+  - name: y3
+    type: continuous
+    train_range: [1.0000877380371094, 4.999951362609863]
+    ood_range: [[0.8000034118559473, 1.0000877380371094], [4.999951362609863, 5.199972340238617]]
+    description: the third variable or value
+  target:
+    name: y2
+    type: continuous
+    train_range: [-72.62247467041014, 7.76524782180786]
+    ood_range:
+    - -107.369652275
+    - 24.1756620469
+    description: the second variable or value
+  license: MIT
+  citation:
+    arXiv: 2504.10415
+    title: 'LLM-SRBench: A New Benchmark for Scientific Equation Discovery with Large Language Models'
+  resources:
+  - https://github.com/deep-symbolic-mathematics/llm-srbench
+  - https://huggingface.co/datasets/nnheui/llm-srbench

@@ -1,0 +1,50 @@
+dataset:
+  name: llm-srbench__bio_pop_growth__BPG5
+  description: "Calculate Population growth rate given Time and Population at time t"
+  splits:
+    train:
+      file: train.csv
+      samples: 3500
+      ratio: 7
+      nmse: 1.8409822e-13
+    valid:
+      file: valid.csv
+      samples: 500
+      ratio: 1
+      nmse: 1.6871228e-13
+    id_test:
+      file: id_test.csv
+      samples: 500
+      ratio: 1
+      nmse: 1.5336223e-13
+    ood_test:
+      file: ood_test.csv
+      samples: 500
+      ratio: 1
+      nmse: 3.0655419e-09
+  ground_truth_formula:
+    file: formula.py
+  features:
+    - name: t
+      type: continuous
+      train_range: [1.011802315711975, 54.098819732666016]
+      ood_range: [54.11062240600586, 60.0]
+      description: Time
+    - name: P
+      type: continuous
+      train_range: [1.012071967124939, 95.21900939941406]
+      ood_range: [95.09303283691406, 95.21907806396483]
+      description: Population at time t
+  target:
+    name: dP_dt
+    type: continuous
+    train_range: [-0.0513237453997135, 24.778741836547848]
+    ood_range: [-0.0513928867876529, 0.0798620656132698]
+    description: Population growth rate
+  license: MIT
+  citation:
+    arXiv: 2504.10415
+    title: 'LLM-SRBench: A New Benchmark for Scientific Equation Discovery with Large Language Models'
+  resources:
+    - https://github.com/deep-symbolic-mathematics/llm-srbench
+    - https://huggingface.co/datasets/nnheui/llm-srbench

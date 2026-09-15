@@ -1,0 +1,58 @@
+dataset:
+  name: keijzer__Keijzer-11
+  description: This is an abstract symbolic regression problem.
+  splits:
+    train:
+      file: train.csv
+      samples: 18
+    valid:
+      file: valid.csv
+      samples: 2
+    id_test:
+      file: id_test.csv
+      samples: 361201
+    ood_test:
+      file: ood_test.csv
+      samples: 200
+  ground_truth_formula:
+    file: formula.py
+  features:
+  - name: x1
+    type: continuous
+    description: Independent variables (anonymized)
+    train_range:
+    - -2.4135140508602886
+    - 2.9390367714383663
+    ood_range:
+    - -3.2965686589112124
+    - 3.2724948944441965
+  - name: x2
+    type: continuous
+    description: Independent variables (anonymized)
+    train_range:
+    - -2.623871359813995
+    - 2.701798803036368
+    ood_range:
+    - -3.2892194641441104
+    - 3.2865095094474146
+  target:
+    name: target
+    type: continuous
+    description: Dependent variable (target)
+    train_range:
+    - -0.45383566726675884
+    - 7.783088009777977
+    ood_range:
+    - -10.334042544742484
+    - 8.876391671671202
+  license: unknown
+  resources:
+  - https://github.com/dso-org/deep-symbolic-optimization
+  - https://raw.githubusercontent.com/dso-org/deep-symbolic-optimization/master/dso/dso/dso/task/regression/benchmarks.csv
+  - 'Benchmark family: keijzer'
+  - 'Equation: x1*x2+sin((x1-1)*(x2-1))'
+  - 'Train specification: {''all'': {''U'': [-3, 3, 20]}}'
+  - 'Test specification: {''all'': {''E'': [-3, 3, 0.01]}}'
+  - The external benchmark test specification is same-domain and was mapped to id_test.
+  - OOD split was synthesized from the training domain by sampling at least one feature
+    outside the train range and evaluating the ground-truth formula.

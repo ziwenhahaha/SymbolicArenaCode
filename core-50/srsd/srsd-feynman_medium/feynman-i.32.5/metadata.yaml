@@ -1,0 +1,52 @@
+dataset:
+  name: srsd__srsd-feynman_medium__feynman-i.32.5
+  description: Calculate the Radiant energy given Electric charge, Magnitude of direction vector
+  splits:
+    train:
+      file: train.csv
+      samples: 8000
+      ratio: 8
+      nmse: 2.9289581e-31
+    valid:
+      file: valid.csv
+      samples: 1000
+      ratio: 1
+      nmse: 2.7687241e-31
+    id_test:
+      file: id_test.csv
+      samples: 1000
+      ratio: 1
+      nmse: 2.6861789e-31
+    ood_test:
+      file: ood_test.csv
+      samples: 1000
+      ratio: 1
+      nmse: 1.9867226e-27
+  ground_truth_formula:
+    file: formula.py
+  features:
+    - name: x0
+      type: continuous
+      train_range: [-0.09998768868831406, 0.09975963434885088]
+      ood_range: [[-0.10997505, -0.099987689], [0.099759634, 0.109747]]
+      description: q, Electric charge
+    - name: x1
+      type: continuous
+      train_range: [100006.61508989606, 9998979.09908697]
+      ood_range: [[79438.746, 100006.62], [9998979.1, 12587863]]
+      description: a, Magnitude of direction vector
+
+  target:
+    name: y
+    type: continuous
+    train_range: [2.3999878121132395e-12, 0.0001849962411539688]
+    ood_range: 
+    description: P, Radiant energy
+
+  license: CC BY 4.0
+  citation:
+    arXiv: 2206.10540
+    title: Rethinking Symbolic Regression Datasets and Benchmarks for Scientific Discovery
+  resources:
+    - https://github.com/omron-sinicx/srsd-benchmark
+    - https://huggingface.co/datasets/yoshitomo-matsubara/srsd-feynman_medium_dummy

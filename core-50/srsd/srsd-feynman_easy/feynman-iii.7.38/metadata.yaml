@@ -1,0 +1,52 @@
+dataset:
+  name: srsd__srsd-feynman_easy__feynman-iii.7.38
+  description: Calculate the Precession frequency given Magnetic moment, Magnetic flux density
+  splits:
+    train:
+      file: train.csv
+      samples: 8000
+      ratio: 8
+      nmse: 1.8312736e-31
+    valid:
+      file: valid.csv
+      samples: 1000
+      ratio: 1
+      nmse: 1.7807136e-31
+    id_test:
+      file: id_test.csv
+      samples: 1000
+      ratio: 1
+      nmse: 1.7226641e-31
+    ood_test:
+      file: ood_test.csv
+      samples: 1000
+      ratio: 1
+      nmse: 1.6495688e-29
+  ground_truth_formula:
+    file: formula.py
+  features:
+    - name: x0
+      type: continuous
+      train_range: [-9.999007738659468e-10, 9.984277425602715e-10]
+      ood_range: [[-1.0998172e-09, -9.9990077e-10], [9.9842774e-10, 1.0983442e-09]]
+      description: mu, Magnetic moment
+    - name: x1
+      type: continuous
+      train_range: [-0.09994451060867852, 0.099965288299082]
+      ood_range: [[-0.10994, -0.099944511], [0.099965288, 0.10996078]]
+      description: B, Magnetic flux density
+
+  target:
+    name: y
+    type: continuous
+    train_range: [-1.8128011499424788e+24, 1.651501887094113e+24]
+    ood_range: 
+    description: omega, Precession frequency
+
+  license: CC BY 4.0
+  citation:
+    arXiv: 2206.10540
+    title: Rethinking Symbolic Regression Datasets and Benchmarks for Scientific Discovery
+  resources:
+    - https://github.com/omron-sinicx/srsd-benchmark
+    - https://huggingface.co/datasets/yoshitomo-matsubara/srsd-feynman_easy

@@ -1,0 +1,57 @@
+dataset:
+  name: srsd__srsd-feynman_easy_dummy__feynman-ii.27.18
+  description: Calculate the Energy density given Vacuum permittivity
+  splits:
+    train:
+      file: train.csv
+      samples: 8000
+      ratio: 8
+      nmse: 4.2742804e-15
+    valid:
+      file: valid.csv
+      samples: 1000
+      ratio: 1
+      nmse: 4.1756148e-15
+    id_test:
+      file: id_test.csv
+      samples: 1000
+      ratio: 1
+      nmse: 4.4963451e-15
+    ood_test:
+      file: ood_test.csv
+      samples: 1000
+      ratio: 1
+      nmse: 1.2319216e-27
+  ground_truth_formula:
+    file: formula.py
+  features:
+    - name: x0
+      type: continuous
+      train_range: [0.1000094637274742, 9.994476318359377]
+      ood_range: [[0.079442911, 0.10000946], [9.9944763, 12.581893]]
+      description: epsilon, Vacuum permittivity
+    - name: x1
+      type: continuous
+      train_range: [-9.959052305532415e-27, 9.99136401739539e-27]
+      ood_range: [[-1.0956573e-26, -9.9590523e-27], [9.991364e-27, 1.0988885e-26]]
+      description: meaningless
+    - name: x2
+      type: continuous
+      train_range: [-99962.859375, 99878.796875]
+      ood_range: [[-109954.94, -99962.859], [99878.797, 109870.88]]
+      description: meaningless
+
+  target:
+    name: y
+    type: continuous
+    train_range: [8.855675931061444e-14, 8.844220911186083e-10]
+    ood_range: 
+    description: u, Energy density
+
+  license: CC BY 4.0
+  citation:
+    arXiv: 2206.10540
+    title: Rethinking Symbolic Regression Datasets and Benchmarks for Scientific Discovery
+  resources:
+    - https://github.com/omron-sinicx/srsd-benchmark
+    - https://huggingface.co/datasets/yoshitomo-matsubara/srsd-feynman_easy_dummy

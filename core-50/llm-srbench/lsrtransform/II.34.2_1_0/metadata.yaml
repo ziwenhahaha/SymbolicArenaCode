@@ -1,0 +1,60 @@
+dataset:
+  name: llm-srbench__lsrtransform__II.34.2_1_0
+  description: "Calculate the velocity of an object given the momentum of an object, a factor or quantity, possibly a charge\
+    \ or a proportionality constant, though more context is needed for precise definition and possibly the radius of a circular\
+    \ path or a distance, more context is needed for precise definition"
+  splits:
+    train:
+      file: train.csv
+      samples: 75000
+      ratio: 3.75
+      nmse: 5.172899e-15
+    valid:
+      file: valid.csv
+      samples: 5000
+      ratio: 0.25
+      nmse: 5.1602364e-15
+    id_test:
+      file: id_test.csv
+      samples: 20000
+      ratio: 1
+      nmse: 5.0880896e-15
+    ood_test:
+      file: ood_test.csv
+      samples: 20000
+      ratio: 1
+      nmse: 1.6410185e-32
+  ground_truth_formula:
+    file: formula.py
+  features:
+  - name: mom
+    type: continuous
+    train_range: [1.0240371227264404, 58.48762893676758]
+    ood_range: [[-1.8529938056844788, 1.0240371227264404], [58.48762893676758, 61.37394552260487]]
+    description: the momentum of an object
+  - name: q
+    type: continuous
+    train_range: [1.0000685453414917, 4.999965667724609]
+    ood_range: [[0.8000461175171694, 1.0000685453414917], [4.999965667724609, 5.199993042800987]]
+    description: a factor or quantity, possibly a charge or a proportionality constant, though more context is needed for
+      precise definition
+  - name: r
+    type: continuous
+    train_range: [1.0000522136688232, 4.999911785125732]
+    ood_range: [[0.8000034831954655, 1.0000522136688232], [4.999911785125732, 5.199981323125482]]
+    description: possibly the radius of a circular path or a distance, more context is needed for precise definition
+  target:
+    name: v
+    type: continuous
+    train_range: [0.0852283984422683, 108.61114501953124]
+    ood_range:
+    - -5.40363812186
+    - 189.216727972
+    description: the velocity of an object
+  license: MIT
+  citation:
+    arXiv: 2504.10415
+    title: 'LLM-SRBench: A New Benchmark for Scientific Equation Discovery with Large Language Models'
+  resources:
+  - https://github.com/deep-symbolic-mathematics/llm-srbench
+  - https://huggingface.co/datasets/nnheui/llm-srbench

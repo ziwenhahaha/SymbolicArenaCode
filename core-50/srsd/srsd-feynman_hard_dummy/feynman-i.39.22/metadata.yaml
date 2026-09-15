@@ -1,0 +1,67 @@
+dataset:
+  name: srsd__srsd-feynman_hard_dummy__feynman-i.39.22
+  description: Calculate the Pressure given Number of molecules, Boltzmann constant, Temperature
+  splits:
+    train:
+      file: train.csv
+      samples: 8000
+      ratio: 8
+      nmse: 2.7596407e-15
+    valid:
+      file: valid.csv
+      samples: 1000
+      ratio: 1
+      nmse: 2.3281909e-15
+    id_test:
+      file: id_test.csv
+      samples: 1000
+      ratio: 1
+      nmse: 2.6706504e-15
+    ood_test:
+      file: ood_test.csv
+      samples: 1000
+      ratio: 1
+      nmse: 4.8123231e-30
+  ground_truth_formula:
+    file: formula.py
+  features:
+    - name: x0
+      type: continuous
+      train_range: [-9.991096547661578e+17, 9.99674460145451e+17]
+      ood_range: [[-1.0990489e+18, -9.9910965e+17], [9.9967446e+17, 1.0996137e+18]]
+      description: meaningless
+    - name: x1
+      type: continuous
+      train_range: [1.0003604459338056e+23, 9.99778595273468e+24]
+      ood_range: [[7.9463766e+22, 1.0003604e+23], [9.997786e+24, 1.2586101e+25]]
+      description: n, Number of molecules
+    - name: x2
+      type: continuous
+      train_range: [-99981.4296875, 99801.046875]
+      ood_range: [[-109970.55, -99981.43], [99801.047, 109790.17]]
+      description: meaningless
+    - name: x3
+      type: continuous
+      train_range: [10.001918792724608, 999.6187133789062]
+      ood_range: [[7.9450342, 10.001919], [999.61871, 1258.4093]]
+      description: k, Boltzmann constant
+    - name: x4
+      type: continuous
+      train_range: [1.0004796422435902e-05, 0.000998645438812673]
+      ood_range: [[7.9478215e-06, 1.0004796e-05], [0.00099864544, 0.0012571048]]
+      description: T, Temperature
+
+  target:
+    name: y
+    type: continuous
+    train_range: [21170.50390625, 10807271424.0]
+    ood_range: 
+    description: P, Pressure
+
+  license: CC BY 4.0
+  citation:
+    arXiv: 2206.10540
+    title: Rethinking Symbolic Regression Datasets and Benchmarks for Scientific Discovery
+  resources:
+    - https://github.com/omron-sinicx/srsd-benchmark
+    - https://huggingface.co/datasets/yoshitomo-matsubara/srsd-feynman_hard_dummy

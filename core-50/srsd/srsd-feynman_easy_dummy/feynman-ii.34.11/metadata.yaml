@@ -1,0 +1,79 @@
+dataset:
+  name: srsd__srsd-feynman_easy_dummy__feynman-ii.34.11
+  description: Calculate the Angular frequency given g-factor, Electric charge, Magnetic field strength, Mass
+  splits:
+    train:
+      file: train.csv
+      samples: 8000
+      ratio: 8
+      nmse: 2.8992585e-15
+    valid:
+      file: valid.csv
+      samples: 1000
+      ratio: 1
+      nmse: 3.5901556e-15
+    id_test:
+      file: id_test.csv
+      samples: 1000
+      ratio: 1
+      nmse: 4.8444617e-15
+    ood_test:
+      file: ood_test.csv
+      samples: 1000
+      ratio: 1
+      nmse: 2.7827571e-29
+  ground_truth_formula:
+    file: formula.py
+  features:
+  - name: x0
+    type: continuous
+    train_range: [-0.9998925328254701, 0.9994353652000428]
+    ood_range: [[-1.0998589, -0.99989253], [0.99943537, 1.0994018]]
+    description: g, g-factor
+  - name: x1
+    type: continuous
+    train_range: [-9.992661592960281e+28, 9.986683076992968e+28]
+    ood_range: [[-1.0991629e+29, -9.9926616e+28], [9.9866831e+28, 1.098565e+29]]
+    description: meaningless
+  - name: x2
+    type: continuous
+    train_range: [-9.997594974109347e-10, 9.998499805874414e-10]
+    ood_range: [[-1.09974e-09, -9.997595e-10], [9.9984998e-10, 1.0998305e-09]]
+    description: q, Electric charge
+  - name: x3
+    type: continuous
+    train_range: [1.0005228126517283e-21, 9.997368214331538e-20]
+    ood_range: [[1.0005228e-21, 1.0005228e-21], [9.9973682e-20, 1.09871e-19]]
+    description: meaningless
+  - name: x4
+    type: continuous
+    train_range: [-9.981902593381164e-08, 9.988238502955935e-08]
+    ood_range: [[-1.098041e-07, -9.9819026e-08], [9.9882385e-08, 1.0986746e-07]]
+    description: B, Magnetic field strength
+  - name: x5
+    type: continuous
+    train_range: [1.0003708951486481e-30, 9.999887485179645e-29]
+    ood_range: [[1.0003709e-30, 1.0003709e-30], [9.9998875e-29, 1.0989873e-28]]
+    description: m, Mass
+  - name: x6
+    type: continuous
+    train_range: [1.0003471008673895e+26, 9.999978191470514e+27]
+    ood_range: [[7.9461782e+25, 1.0003471e+26], [9.9999782e+27, 1.2589007e+28]]
+    description: meaningless
+
+  target:
+    name: y
+    type: continuous
+    train_range: [-14713497845760.0, 17545883025408.0]
+    ood_range:
+    - -1521856360670000.0
+    - 767376649066000.0
+    description: omega, Angular frequency
+
+  license: CC BY 4.0
+  citation:
+    arXiv: 2206.10540
+    title: Rethinking Symbolic Regression Datasets and Benchmarks for Scientific Discovery
+  resources:
+  - https://github.com/omron-sinicx/srsd-benchmark
+  - https://huggingface.co/datasets/yoshitomo-matsubara/srsd-feynman_easy_dummy

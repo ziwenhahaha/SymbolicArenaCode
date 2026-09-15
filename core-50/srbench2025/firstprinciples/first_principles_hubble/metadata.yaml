@@ -1,0 +1,50 @@
+dataset:
+  name: srbench2025__firstprinciples__first_principles_hubble
+  description: The Hubble constant is a measure of the rate of expansion of the universe,
+    measured as v = H_0 D, where v is the velocity of a galaxy, D is its distance
+    from us, and H_0 is the Hubble constant (73.3 (km/s)/Mpc).
+  splits:
+    train:
+      file: train.csv
+      samples: 22
+    valid:
+      file: valid.csv
+      samples: 3
+    id_test:
+      file: id_test.csv
+      samples: 3
+    ood_test:
+      file: ood_test.csv
+      samples: 4
+  ground_truth_formula:
+    file: formula.py
+  features:
+  - name: D
+    type: continuous
+    description: distance of a galaxy from us (in million parsecs, Mpc)
+    train_range:
+    - 0.0369888800481281
+    - 2.0007762619107683
+    ood_range:
+    - 0.0323507151312852
+    - 2.0063653476683028
+  target:
+    name: target
+    type: continuous
+    description: velocity, in km/s
+    train_range:
+    - -115.2166741058436
+    - 846.4942071454906
+    ood_range:
+    - -17.679365017757164
+    - 1109.6275883483086
+  license: unknown
+  resources:
+  - https://github.com/cavalab/srbench/tree/srbench_2025
+  - https://arxiv.org/abs/2505.03977
+  - srbench2025/firstprinciples/first_principles_hubble/first_principles_hubble.tsv.gz
+  - publication repository https://github.com/MilesCranmer/PySR
+  - Interpretable machine learning for science with PySR and SymbolicRegression, CRANMER,
+    Miles, arXiv preprint arXiv:2305.01582, 2023.
+  - OOD split extracted from the original table by iterative axis-wise interval shrink
+    (step_percent=0.0001, target_ratio=0.1).

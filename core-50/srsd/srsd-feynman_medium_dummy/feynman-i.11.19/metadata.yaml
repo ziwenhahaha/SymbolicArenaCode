@@ -1,0 +1,85 @@
+dataset:
+  name: srsd__srsd-feynman_medium_dummy__feynman-i.11.19
+  description: Calculate the Inner product given Element of a vector, Element of a vector, Element of a vector, Element of
+    a vector, Element of a vector, Element of a vector
+  splits:
+    train:
+      file: train.csv
+      samples: 8000
+      ratio: 8
+      nmse: 2.0742763e-15
+    valid:
+      file: valid.csv
+      samples: 1000
+      ratio: 1
+      nmse: 2.409452e-15
+    id_test:
+      file: id_test.csv
+      samples: 1000
+      ratio: 1
+      nmse: 1.9117064e-15
+    ood_test:
+      file: ood_test.csv
+      samples: 1000
+      ratio: 1
+      nmse: 1.8134092e-29
+  ground_truth_formula:
+    file: formula.py
+  features:
+  - name: x0
+    type: continuous
+    train_range: [-9.948788642883299, 9.99236583709717]
+    ood_range: [[-10.945846, -9.9487886], [9.9923658, 10.989424]]
+    description: x_1, Element of a vector
+  - name: x1
+    type: continuous
+    train_range: [-9.994023323059082, 9.990005493164062]
+    ood_range: [[-10.993225, -9.9940233], [9.9900055, 10.989207]]
+    description: y_1, Element of a vector
+  - name: x2
+    type: continuous
+    train_range: [-9.991555213928223, 9.986914634704588]
+    ood_range: [[-10.990479, -9.9915552], [9.9869146, 10.985838]]
+    description: x_2, Element of a vector
+  - name: x3
+    type: continuous
+    train_range: [-9.996223449707031, 9.989998817443848]
+    ood_range: [[-10.995535, -9.9962234], [9.9899988, 10.98931]]
+    description: y_2, Element of a vector
+  - name: x4
+    type: continuous
+    train_range: [-998880837632.0, 999943634944.0]
+    ood_range: [[-1.0988221e+12, -9.9888084e+11], [9.9994363e+11, 1.0998849e+12]]
+    description: meaningless
+  - name: x5
+    type: continuous
+    train_range: [-9.998019218444824, 9.991482734680176]
+    ood_range: [[-10.997494, -9.9980192], [9.9914827, 10.990958]]
+    description: x_3, Element of a vector
+  - name: x6
+    type: continuous
+    train_range: [-9.994571685791016, 9.988325119018553]
+    ood_range: [[-10.993717, -9.9945717], [9.9883251, 10.98747]]
+    description: y_3, Element of a vector
+  - name: x7
+    type: continuous
+    train_range: [-9.967161644641731e-13, 9.996824331878761e-13]
+    ood_range: [[-1.0965361e-12, -9.9671616e-13], [9.9968243e-13, 1.0995024e-12]]
+    description: meaningless
+
+  target:
+    name: y
+    type: continuous
+    train_range: [-161.4490966796875, 123.22327423095705]
+    ood_range:
+    - -453.417004508
+    - 438.691350806
+    description: A, Inner product
+
+  license: CC BY 4.0
+  citation:
+    arXiv: 2206.10540
+    title: Rethinking Symbolic Regression Datasets and Benchmarks for Scientific Discovery
+  resources:
+  - https://github.com/omron-sinicx/srsd-benchmark
+  - https://huggingface.co/datasets/yoshitomo-matsubara/srsd-feynman_medium

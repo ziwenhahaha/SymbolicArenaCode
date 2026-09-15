@@ -1,0 +1,72 @@
+dataset:
+  name: srsd__srsd-feynman_hard_dummy__feynman-bonus.20
+  description: Calculate the Differential cross section given Fine structure constant, Planck constant, Electron mass
+  splits:
+    train:
+      file: train.csv
+      samples: 8000
+      ratio: 8
+      nmse: 0
+    valid:
+      file: valid.csv
+      samples: 1000
+      ratio: 1
+      nmse: 0
+    id_test:
+      file: id_test.csv
+      samples: 1000
+      ratio: 1
+      nmse: 0
+    ood_test:
+      file: ood_test.csv
+      samples: 1000
+      ratio: 1
+      nmse: 0
+  ground_truth_formula:
+    file: formula.py
+  features:
+    - name: x0
+      type: continuous
+      train_range: [1.0001477003097534, 99.99640655517578]
+      ood_range: [[0.79445285, 1.0001477], [99.996407, 125.88686]]
+      description: meaningless
+    - name: x1
+      type: continuous
+      train_range: [-9.986120845229031e+19, 9.99863240794382e+19]
+      ood_range: [[-1.0985359e+20, -9.9861208e+19], [9.9986324e+19, 1.099787e+20]]
+      description: meaningless
+    - name: x2
+      type: continuous
+      train_range: [1000231040.0, 99940712448.0]
+      ood_range: [[7.9454449e+08, 1.000231e+09], [9.9940712e+10, 1.2581272e+11]]
+      description: alpha, Fine structure constant
+    - name: x3
+      type: continuous
+      train_range: [1000855104.0, 99967090688.0]
+      ood_range: [[7.9505453e+08, 1.0008551e+09], [9.9967091e+10, 1.2584366e+11]]
+      description: h, Planck constant
+    - name: x4
+      type: continuous
+      train_range: [-9.998176604873773e-32, 9.99986226377285e-32]
+      ood_range: [[-1.0998079e-31, -9.9981766e-32], [9.9998623e-32, 1.0999764e-31]]
+      description: meaningless
+    - name: x5
+      type: continuous
+      train_range: [0.0017195558175444603, 6.281599044799805]
+      ood_range: [[0.0017195558, 0.0017195558], [6.281599, 6.909587]]
+      description: m, Electron mass
+
+  target:
+    name: y
+    type: continuous
+    train_range: [2.556281031752972e-31, 2.0402074511181272e-23]
+    ood_range: 
+    description: A, Differential cross section
+
+  license: CC BY 4.0
+  citation:
+    arXiv: 2206.10540
+    title: Rethinking Symbolic Regression Datasets and Benchmarks for Scientific Discovery
+  resources:
+    - https://github.com/omron-sinicx/srsd-benchmark
+    - https://huggingface.co/datasets/yoshitomo-matsubara/srsd-feynman_hard_dummy
