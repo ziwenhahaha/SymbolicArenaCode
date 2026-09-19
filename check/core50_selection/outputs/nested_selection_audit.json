@@ -1,0 +1,497 @@
+{
+  "target_sizes": [
+    50,
+    60,
+    70,
+    80
+  ],
+  "nested_chain_ok": true,
+  "core50_historical_overlap": 50,
+  "core50_historical_only": [],
+  "core50_recovered_only": [],
+  "all_constraints_ok": true,
+  "input": {
+    "dataset_level_sha256": "f88a594cd678ef7497f91301675a7c7f3e8169f14e6fd7dc9dbcf640821f7a13",
+    "dataset_algorithm_sha256": "7a00dc7461e3a129f2973108b5f4ed1f1e2dce282f173d7be479689ec1fb3aa5",
+    "exact_calibration_snapshot": true
+  },
+  "model": {
+    "type": "ExtraTreesClassifier",
+    "n_estimators": 12,
+    "max_depth": 9,
+    "random_state": 1,
+    "id_features_used": false
+  },
+  "solver": {
+    "core50": {
+      "success": true,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "compatibility_objective_sum": 45.236092336658295,
+      "family_quotas": {
+        "llm-srbench": {
+          "min": 12,
+          "max": 16,
+          "target": 13.343373493975905
+        },
+        "srsd": {
+          "min": 11,
+          "max": 15,
+          "target": 12.981927710843372
+        },
+        "srbench1.0": {
+          "min": 7,
+          "max": 11,
+          "target": 8.509036144578314
+        },
+        "keijzer": {
+          "min": 2,
+          "max": 6,
+          "target": 3.1777108433734944
+        },
+        "srbench2025/firstprinciples": {
+          "min": 2,
+          "max": 6,
+          "target": 3.0421686746987953
+        },
+        "nguyen": {
+          "min": 2,
+          "max": 6,
+          "target": 3.0421686746987953
+        },
+        "korns": {
+          "min": 2,
+          "max": 6,
+          "target": 3.0421686746987953
+        },
+        "vladislavleva": {
+          "min": 1,
+          "max": 5,
+          "target": 2.86144578313253
+        }
+      }
+    },
+    "core60": {
+      "success": true,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "objective_sum": 51.45410487046347,
+      "required_previous_size": 50,
+      "added_count": 10,
+      "scaled_caps": {
+        "subgroup": 10,
+        "limited_quota": 10,
+        "extreme": 8,
+        "one_sided": 6
+      },
+      "family_quotas": {
+        "llm-srbench": {
+          "min": 15,
+          "max": 19,
+          "target": 16.012048192771086
+        },
+        "srsd": {
+          "min": 14,
+          "max": 18,
+          "target": 15.578313253012047
+        },
+        "srbench1.0": {
+          "min": 9,
+          "max": 13,
+          "target": 10.210843373493976
+        },
+        "keijzer": {
+          "min": 2,
+          "max": 6,
+          "target": 3.813253012048193
+        },
+        "srbench2025/firstprinciples": {
+          "min": 2,
+          "max": 6,
+          "target": 3.6506024096385543
+        },
+        "nguyen": {
+          "min": 2,
+          "max": 6,
+          "target": 3.6506024096385543
+        },
+        "korns": {
+          "min": 2,
+          "max": 6,
+          "target": 3.6506024096385543
+        },
+        "vladislavleva": {
+          "min": 2,
+          "max": 6,
+          "target": 3.433734939759036
+        }
+      }
+    },
+    "core70": {
+      "success": true,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "objective_sum": 55.71307876861548,
+      "required_previous_size": 60,
+      "added_count": 10,
+      "scaled_caps": {
+        "subgroup": 12,
+        "limited_quota": 12,
+        "extreme": 9,
+        "one_sided": 7
+      },
+      "family_quotas": {
+        "llm-srbench": {
+          "min": 17,
+          "max": 21,
+          "target": 18.680722891566266
+        },
+        "srsd": {
+          "min": 17,
+          "max": 21,
+          "target": 18.17469879518072
+        },
+        "srbench1.0": {
+          "min": 10,
+          "max": 14,
+          "target": 11.91265060240964
+        },
+        "keijzer": {
+          "min": 3,
+          "max": 7,
+          "target": 4.448795180722892
+        },
+        "srbench2025/firstprinciples": {
+          "min": 3,
+          "max": 7,
+          "target": 4.259036144578314
+        },
+        "nguyen": {
+          "min": 3,
+          "max": 7,
+          "target": 4.259036144578314
+        },
+        "korns": {
+          "min": 3,
+          "max": 7,
+          "target": 4.259036144578314
+        },
+        "vladislavleva": {
+          "min": 3,
+          "max": 7,
+          "target": 4.006024096385542
+        }
+      }
+    },
+    "core80": {
+      "success": true,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "objective_sum": 60.38209801325333,
+      "required_previous_size": 70,
+      "added_count": 10,
+      "scaled_caps": {
+        "subgroup": 13,
+        "limited_quota": 13,
+        "extreme": 10,
+        "one_sided": 8
+      },
+      "family_quotas": {
+        "llm-srbench": {
+          "min": 20,
+          "max": 24,
+          "target": 21.34939759036145
+        },
+        "srsd": {
+          "min": 19,
+          "max": 23,
+          "target": 20.771084337349393
+        },
+        "srbench1.0": {
+          "min": 12,
+          "max": 16,
+          "target": 13.614457831325302
+        },
+        "keijzer": {
+          "min": 4,
+          "max": 8,
+          "target": 5.0843373493975905
+        },
+        "srbench2025/firstprinciples": {
+          "min": 3,
+          "max": 7,
+          "target": 4.867469879518072
+        },
+        "nguyen": {
+          "min": 3,
+          "max": 7,
+          "target": 4.867469879518072
+        },
+        "korns": {
+          "min": 3,
+          "max": 7,
+          "target": 4.867469879518072
+        },
+        "vladislavleva": {
+          "min": 3,
+          "max": 7,
+          "target": 4.578313253012048
+        }
+      }
+    }
+  },
+  "subsets": {
+    "core50": {
+      "size": 50,
+      "family_counts": {
+        "llm-srbench": 16,
+        "srsd": 15,
+        "srbench1.0": 9,
+        "nguyen": 3,
+        "srbench2025/firstprinciples": 2,
+        "keijzer": 2,
+        "korns": 2,
+        "vladislavleva": 1
+      },
+      "difficulty_counts": {
+        "medium": 23,
+        "hard": 12,
+        "easy": 10,
+        "extreme": 5
+      },
+      "failure_mode_counts": {
+        "all_good": 20,
+        "ood_failure": 17,
+        "one_method_wins": 11,
+        "all_struggle": 1,
+        "one_sided": 1
+      },
+      "subgroup_max": 5,
+      "semantic_duplicate_max": 1,
+      "basename_max": 1,
+      "limited_quota_count": 6,
+      "extreme_count": 5,
+      "one_sided_count": 1,
+      "size_ok": true,
+      "family_quota_ok": true,
+      "semantic_duplicate_ok": true,
+      "basename_ok": true,
+      "subgroup_cap_ok": true,
+      "limited_quota_ok": true,
+      "extreme_ok": true,
+      "one_sided_ok": true,
+      "all_constraints_ok": true,
+      "contains_previous": true,
+      "added_dataset_ids": [
+        "g0018",
+        "g0020",
+        "g0024",
+        "g0025",
+        "g0027",
+        "g0028",
+        "g0052",
+        "g0053",
+        "g0066",
+        "g0105",
+        "g0130",
+        "g0151",
+        "g0168",
+        "g0184",
+        "g0208",
+        "g0233",
+        "g0266",
+        "g0270",
+        "g0277",
+        "g0290",
+        "g0292",
+        "g0320",
+        "g0358",
+        "g0365",
+        "g0371",
+        "g0390",
+        "g0399",
+        "g0406",
+        "g0413",
+        "g0436",
+        "g0461",
+        "g0496",
+        "g0524",
+        "g0542",
+        "g0578",
+        "g0594",
+        "g0595",
+        "g0601",
+        "g0602",
+        "g0604",
+        "g0608",
+        "g0611",
+        "g0620",
+        "g0625",
+        "g0636",
+        "g0641",
+        "g0644",
+        "g0649",
+        "g0651",
+        "g0660"
+      ]
+    },
+    "core60": {
+      "size": 60,
+      "family_counts": {
+        "llm-srbench": 19,
+        "srsd": 18,
+        "srbench1.0": 12,
+        "nguyen": 3,
+        "srbench2025/firstprinciples": 2,
+        "keijzer": 2,
+        "korns": 2,
+        "vladislavleva": 2
+      },
+      "difficulty_counts": {
+        "medium": 29,
+        "hard": 13,
+        "easy": 12,
+        "extreme": 6
+      },
+      "failure_mode_counts": {
+        "all_good": 26,
+        "ood_failure": 19,
+        "one_method_wins": 13,
+        "all_struggle": 1,
+        "one_sided": 1
+      },
+      "subgroup_max": 7,
+      "semantic_duplicate_max": 1,
+      "basename_max": 1,
+      "limited_quota_count": 7,
+      "extreme_count": 6,
+      "one_sided_count": 1,
+      "size_ok": true,
+      "family_quota_ok": true,
+      "semantic_duplicate_ok": true,
+      "basename_ok": true,
+      "subgroup_cap_ok": true,
+      "limited_quota_ok": true,
+      "extreme_ok": true,
+      "one_sided_ok": true,
+      "all_constraints_ok": true,
+      "contains_previous": true,
+      "added_dataset_ids": [
+        "g0006",
+        "g0043",
+        "g0067",
+        "g0275",
+        "g0289",
+        "g0448",
+        "g0497",
+        "g0596",
+        "g0599",
+        "g0661"
+      ]
+    },
+    "core70": {
+      "size": 70,
+      "family_counts": {
+        "llm-srbench": 21,
+        "srsd": 21,
+        "srbench1.0": 13,
+        "srbench2025/firstprinciples": 3,
+        "keijzer": 3,
+        "nguyen": 3,
+        "korns": 3,
+        "vladislavleva": 3
+      },
+      "difficulty_counts": {
+        "medium": 32,
+        "easy": 17,
+        "hard": 14,
+        "extreme": 7
+      },
+      "failure_mode_counts": {
+        "all_good": 34,
+        "ood_failure": 20,
+        "one_method_wins": 14,
+        "all_struggle": 1,
+        "one_sided": 1
+      },
+      "subgroup_max": 7,
+      "semantic_duplicate_max": 1,
+      "basename_max": 1,
+      "limited_quota_count": 8,
+      "extreme_count": 7,
+      "one_sided_count": 1,
+      "size_ok": true,
+      "family_quota_ok": true,
+      "semantic_duplicate_ok": true,
+      "basename_ok": true,
+      "subgroup_cap_ok": true,
+      "limited_quota_ok": true,
+      "extreme_ok": true,
+      "one_sided_ok": true,
+      "all_constraints_ok": true,
+      "contains_previous": true,
+      "added_dataset_ids": [
+        "g0035",
+        "g0104",
+        "g0264",
+        "g0297",
+        "g0405",
+        "g0488",
+        "g0617",
+        "g0621",
+        "g0645",
+        "g0663"
+      ]
+    },
+    "core80": {
+      "size": 80,
+      "family_counts": {
+        "llm-srbench": 24,
+        "srsd": 23,
+        "srbench1.0": 16,
+        "keijzer": 5,
+        "srbench2025/firstprinciples": 3,
+        "nguyen": 3,
+        "korns": 3,
+        "vladislavleva": 3
+      },
+      "difficulty_counts": {
+        "medium": 39,
+        "easy": 19,
+        "hard": 15,
+        "extreme": 7
+      },
+      "failure_mode_counts": {
+        "all_good": 39,
+        "ood_failure": 20,
+        "one_method_wins": 19,
+        "all_struggle": 1,
+        "one_sided": 1
+      },
+      "subgroup_max": 10,
+      "semantic_duplicate_max": 1,
+      "basename_max": 1,
+      "limited_quota_count": 8,
+      "extreme_count": 7,
+      "one_sided_count": 1,
+      "size_ok": true,
+      "family_quota_ok": true,
+      "semantic_duplicate_ok": true,
+      "basename_ok": true,
+      "subgroup_cap_ok": true,
+      "limited_quota_ok": true,
+      "extreme_ok": true,
+      "one_sided_ok": true,
+      "all_constraints_ok": true,
+      "contains_previous": true,
+      "added_dataset_ids": [
+        "g0063",
+        "g0064",
+        "g0065",
+        "g0298",
+        "g0425",
+        "g0505",
+        "g0583",
+        "g0600",
+        "g0626",
+        "g0631"
+      ]
+    }
+  }
+}

@@ -70,7 +70,8 @@ SymbolicArenaCode/
 |   |-- config/                      # Algorithm and runtime configuration
 |   |-- pipelines/                   # Evaluation pipelines
 |   `-- srkit/                       # Shared interfaces and CLI support
-|-- check/                           # Integration and smoke checks
+|-- check/                           # Integration, smoke, and selection checks
+|   `-- core50_selection/            # Recovered Core50/Core60/Core70/Core80 selector
 |-- core-50_datasets.csv             # Core-50 dataset manifest
 |-- environment.yml                  # Controller Conda environment
 |-- pyproject.toml                   # Python package definition
@@ -100,6 +101,26 @@ archives are intentionally excluded from this code repository.
 
 The supplementary GPT-5.6-Sol audit of all 6,800 Opus5 simplification records
 is summarized under `results/gpt56_opus_simplification_audit_20260915/`.
+
+### Core-50 Selection Reproduction
+
+The recovered Core-50 selection logic and its nested reserve-set extension are
+under `check/core50_selection/`. The package is self-contained: it includes the
+664-task Probe4 postprocess input ZIP, the calibrated Core50 compatibility
+selector, the constrained nested Core50/Core60/Core70/Core80 selector, and the
+published CSV/audit outputs.
+
+From the repository root, run:
+
+```bash
+python check/core50_selection/core50_60_70_80_selector.py \
+  --input check/core50_selection/input/postprocess_final_20260501-105508_664+4+3result.zip \
+  --outdir check/core50_selection/outputs_reproduced
+```
+
+The recovered Core50 has an exact 50/50 overlap with the archived membership;
+the generated four subsets satisfy `Core50 subset Core60 subset Core70 subset Core80`.
+The source checksums and solver audit are kept next to the scripts and outputs.
 
 ## 1. Access the Anonymous Repository
 

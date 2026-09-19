@@ -7,12 +7,14 @@
   "contents": {
     "core_package": "scientific_intelligent_modelling/",
     "integration_and_analysis_code": "check/",
+    "core50_selection_reproduction": "check/core50_selection/",
     "focused_tests": "tests/",
     "core50_datasets": "core-50/",
     "legacy_compact_results": "results/stage1_* through results/stage4_core50_12algs_*",
     "current_core50_results": "results/stage4_core50_15algs_3seeds_3conditions_3h/",
     "current_metric_code": "evaluation/core50_final_20260914/code/",
-    "formula_audit_summary": "results/gpt56_opus_simplification_audit_20260915/"
+    "formula_audit_summary": "results/gpt56_opus_simplification_audit_20260915/",
+    "nested_core_sets": "check/core50_selection/outputs/core50.csv through core80.csv"
   },
   "excluded": [
     "API credentials and provider response bodies",
@@ -32,6 +34,7 @@
   },
   "validation": {
     "focused_pytest": "24 passed",
+    "core50_selector_replay": "Core50 50/50; Core50/Core60/Core70/Core80 nested; constraints passed",
     "core_imports": "passed",
     "maximum_tracked_file_size_mib": 50,
     "release_checksums": "SHA256SUMS"
